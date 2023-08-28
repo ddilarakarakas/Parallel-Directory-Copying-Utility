@@ -5,7 +5,7 @@ The Parallel Directory Copying Utility (pCp) project aims to create a multithrea
 
 ## _Implementation Details_
 
-##Producer Thread
+## Producer Thread
 
 The producer thread function takes an array of source and destination directory paths as parameters. For each file in the source directory, the producer thread:
 
@@ -14,7 +14,7 @@ The producer thread function takes an array of source and destination directory 
 - If an error occurs during file operations, both files are closed, and an error message is displayed.
 - The opened file descriptors and file names are placed in a buffer for consumption by consumer threads.
 
-##Consumer Threads
+## Consumer Threads
 
 Consumer threads retrieve items from the buffer created by the producer thread. Each consumer thread:
 
@@ -23,7 +23,7 @@ Consumer threads retrieve items from the buffer created by the producer thread. 
 - Closes both files after copying is complete.
 - Writes a message to standard output indicating the file name and completion status.
 
-##Main Program
+## Main Program
 
 The main program takes command-line arguments for buffer size, number of consumer threads, source directory, and destination directory. It performs the following steps:
 
@@ -36,7 +36,7 @@ The main program takes command-line arguments for buffer size, number of consume
 - Manages memory to prevent memory leaks.
 - Collects statistics about the number and types of files copied, as well as the total number of bytes copied.
 
-##Experimentation and Analysis
+## Experimentation and Analysis
 
 The project requires experimentation to determine optimal combinations of buffer size and consumer threads. The following steps should be taken:
 
